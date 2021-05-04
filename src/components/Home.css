@@ -1,0 +1,38 @@
+.body {
+  width: min(90vw, 1000px);
+  margin: auto;
+}
+
+.cards {
+  padding: 10rem 2rem;
+  border-radius: 0.5rem;
+
+  text-align: center;
+}
+
+.card {
+  border-radius: 15px 15px 0 0;
+}
+
+.card_image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.card.h1 {
+  background-color: #ffe81f;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}

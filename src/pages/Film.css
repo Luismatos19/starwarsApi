@@ -1,0 +1,9 @@
+.body {
+  padding-top: 100px;
+  width: min(90vw, 1000px);
+  margin: auto;
+  text-align: center;
+}
+
+.listas {
+}
