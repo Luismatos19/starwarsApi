@@ -5,5 +5,19 @@
   text-align: center;
 }
 
-.listas {
+.cards {
+  padding-top: 70px;
+  border-radius: 0.5rem;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #ffe81f;
+  height: 10rem;
+  align-items: center;
+  justify-content: space-around;
 }
