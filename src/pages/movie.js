@@ -50,28 +50,28 @@ function Film() {
           <h2> Release Date:</h2>
           <p>{films.release_date}</p>
         </div>
-        <div className="cards">
-          <div className="card">
+        <div className="cards2">
+          <div className="card2">
             <a href="/characters" className="click">
               <h1>CHARACTERS</h1>
             </a>
           </div>
-          <div className="card">
+          <div className="card2">
             <a href="/characters">
               <h1>PLANETS</h1>
             </a>
           </div>
-          <div className="card">
+          <div className="card2">
             <a href="/characters">
               <h1>STARSHIPS</h1>
             </a>
           </div>
-          <div className="card">
+          <div className="card2">
             <a href="/characters">
               <h1>VEHICLES</h1>
             </a>
           </div>
-          <div className="card">
+          <div className="card2">
             <a href="/characters">
               <h1>SPECIES</h1>
             </a>

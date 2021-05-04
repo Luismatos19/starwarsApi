@@ -5,19 +5,32 @@
   text-align: center;
 }
 
-.cards {
+.cards2 {
   padding-top: 70px;
+  margin: auto;
   border-radius: 0.5rem;
   justify-content: center;
   text-align: center;
-  padding-bottom: 20px;
 }
 
-.card {
+.card2 {
   display: flex;
   border-radius: 15px 15px 15px 15px;
   background-color: #ffe81f;
   height: 10rem;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .cards2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
 }
