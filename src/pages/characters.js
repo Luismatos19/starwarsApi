@@ -8,9 +8,11 @@ class Characters extends React.Component {
     super(props);
     this.state = {
       film: [],
-      isLoading: true
+      isLoading: true,
+      getChar: []
     };
   }
+
 
 
   async componentDidMount() {
@@ -19,6 +21,8 @@ class Characters extends React.Component {
     const api = `https://swapi.dev/api/films/${valor}`;
 
     const response = await axios.get(api);
+
+    console.log(response);
 
     const person = response.data.characters;
 
@@ -31,13 +35,21 @@ class Characters extends React.Component {
     const chars = JSON.parse(localStorage.getItem('chars'));
     chars.map(r => { pqp.push(r.name) });
 
-    this.setState({ film: pqp, isLoading: false });
+
+
+    const getIndex = person.map(l => (l.replace(/\D/g, '')))
+
+    this.setState({ film: pqp, isLoading: false, getChar: getIndex });
 
   }
 
   render() {
     const pqp = this.state.film;
     //const isLoading = this.state.isLoading;
+    const getChar = this.state.getChar;
+    const number = getChar.map(c => (Number(c)));
+    console.log(number);
+
 
     return (
       this.state.isLoading ? <div>Loading</div> :
@@ -47,8 +59,8 @@ class Characters extends React.Component {
             <div className="card3">
               <h1>CHARACTERS</h1>
               <div>
-                {pqp.map((r) => (
-                  <a href={'/'} key={r}>
+                {pqp.map((r, id) => (
+                  <a href={'/people'} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
                     <h2 key={r} >{r}</h2>
                   </a>
                 ))}
