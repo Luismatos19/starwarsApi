@@ -4,7 +4,6 @@ import Posters from './Posters';
 import './Home.css';
 
 function Home() {
-  local
 
   const [films, setFilm] = useState([]);
 
