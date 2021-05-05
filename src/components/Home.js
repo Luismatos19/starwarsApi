@@ -4,7 +4,8 @@ import Posters from './Posters';
 import './Home.css';
 
 function Home() {
-  localStorage.removeItem('@starwars/0');
+  local
+
   const [films, setFilm] = useState([]);
 
   useEffect(() => {
@@ -12,6 +13,7 @@ function Home() {
       setFilm(res.data.results.map((film) => film.title));
     });
   }, []);
+
 
 
   return (
