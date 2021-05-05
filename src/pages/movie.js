@@ -3,6 +3,7 @@ import './Film.css';
 import Header from '../components/Header';
 
 
+
 function Film() {
   const [films, setFilms] = useState([]);
   let valor = localStorage.getItem('@starwars/0');
@@ -13,23 +14,6 @@ function Film() {
       .then(res => res.json())
       .then((result) => { setFilms(result) })
   }, [])
-
-  /*
-  const [people, setPeople] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://swapi.dev/api/people/').then((res) => {
-      setPeople(res.data.results.map((people) => people.name));
-    });
-  }, []);
-
-  const len = [films.characters[1]];
-  const newLen = len.map((g) => {
-    g = g.string.replace(/\D/g, '')
-    return g;
-  });
-  console.log(newLen);
-  */
 
 
   return (

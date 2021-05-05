@@ -10,7 +10,7 @@ import Movie from '../pages/movie';
 const Routes = () => (
   <BrowserRouter>
     <Route exact path="/" component={App} />
-    <Route exact path="/charaters" component={Characters} />
+    <Route exact path="/characters" component={Characters} />
     <Route exact path="/planets" component={Planets} />
     <Route exact path="/ships" component={Ships} />
     <Route exact path="/film" component={Movie} />
