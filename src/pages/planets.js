@@ -28,12 +28,12 @@ class Planets extends React.Component {
     const planet = response.data.planets;
 
     //.map  pra fazer request de um array de links
-    let char = planet.map((c) => fetch(c).then(res => res.json()));
+    let char = await planet.map((c) => fetch(c).then(res => res.json()));
 
 
     const data = [];
     //pega o nome de cada planeta e colocar no array guardado no localstorage
-    Promise.all(char).then(res => { localStorage.setItem('plans', JSON.stringify(res)) })
+    await Promise.all(char).then(res => { localStorage.setItem('plans', JSON.stringify(res)) })
 
 
     //pega o objeto q ta no localstorage e coloca ele num array
@@ -78,10 +78,10 @@ class Planets extends React.Component {
               <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[2]}`) }}>
                 <h1>{plan[2]}</h1>
               </a>
-              <a href="//planets/info" onClick={() => { localStorage.setItem('planetId', `${number[3]}`) }}>
+              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[3]}`) }}>
                 <h1>{plan[3]}</h1>
               </a>
-              <a href="//planets/info" onClick={() => { localStorage.setItem('planetId', `${number[4]}`) }}>
+              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[4]}`) }}>
                 <h1>{plan[4]}</h1>
               </a>
 

@@ -29,9 +29,9 @@ class Characters extends React.Component {
 
     // faz as requisiçao de uma array de links
 
-    let char = person.map((c) => fetch(c).then(res => res.json()));
+    let char = await person.map((c) => fetch(c).then(res => res.json()));
 
-    Promise.all(char).then(res => { localStorage.setItem('chars', JSON.stringify(res)) })
+    await Promise.all(char).then(res => { localStorage.setItem('chars', JSON.stringify(res)) })
 
     const pqp = [];
 

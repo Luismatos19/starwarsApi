@@ -13,6 +13,8 @@ function Film() {
 
 
   useEffect(() => {
+
+
     fetch(api)
       .then(res => res.json())
       .then((result) => { setFilms(result) })
