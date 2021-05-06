@@ -5,7 +5,9 @@ import Characters from '../pages/characters';
 import Planets from '../pages/planets';
 import Ships from '../pages/ships';
 import App from './AppComponent/App';
-import Movie from '../pages/movie';
+import Film from '../pages/Film';
+import People from '../components/People'
+import PlanetInfo from '../components/PlanetInfo'
 
 const Routes = () => (
   <BrowserRouter>
@@ -13,7 +15,9 @@ const Routes = () => (
     <Route exact path="/characters" component={Characters} />
     <Route exact path="/planets" component={Planets} />
     <Route exact path="/ships" component={Ships} />
-    <Route exact path="/film" component={Movie} />
+    <Route exact path="/film" component={Film} />
+    <Route exact path="/people" component={People} />
+    <Route path="planets/:id" component={PlanetInfo} />
   </BrowserRouter>
 );
 

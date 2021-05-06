@@ -8,19 +8,26 @@ class Characters extends React.Component {
     super(props);
     this.state = {
       film: [],
-      isLoading: true
+      isLoading: true,
+      getChar: []
     };
   }
 
 
+
   async componentDidMount() {
 
+    // pega a referencia guardado no localStorage
     let valor = localStorage.getItem('@starwars/0');
     const api = `https://swapi.dev/api/films/${valor}`;
 
     const response = await axios.get(api);
 
+    console.log(response);
+
     const person = response.data.characters;
+
+    // faz as requisiçao de uma array de links
 
     let char = person.map((c) => fetch(c).then(res => res.json()));
 
@@ -28,16 +35,27 @@ class Characters extends React.Component {
 
     const pqp = [];
 
+    //guarda o retorno de cada link num array no localstorage
     const chars = JSON.parse(localStorage.getItem('chars'));
     chars.map(r => { pqp.push(r.name) });
 
-    this.setState({ film: pqp, isLoading: false });
+
+    // função pra pegar o id do filme no link dele
+    const getIndex = person.map(l => (l.replace(/\D/g, '')))
+
+    this.setState({ film: pqp, isLoading: false, getChar: getIndex });
 
   }
 
   render() {
-    const pqp = this.state.film;
+    const char = this.state.film;
     //const isLoading = this.state.isLoading;
+
+    // pega o id do filme e tranforma ele em numbers
+    const getChar = this.state.getChar;
+    const number = getChar.map(c => (Number(c)));
+
+
 
     return (
       this.state.isLoading ? <div>Loading</div> :
@@ -47,8 +65,8 @@ class Characters extends React.Component {
             <div className="card3">
               <h1>CHARACTERS</h1>
               <div>
-                {pqp.map((r) => (
-                  <a href={'/'} key={r}>
+                {char.map((r, id) => (
+                  <a href={'/people'} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
                     <h2 key={r} >{r}</h2>
                   </a>
                 ))}

@@ -41,7 +41,7 @@ function Film() {
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/planets">
               <h1>PLANETS</h1>
             </a>
           </div>
