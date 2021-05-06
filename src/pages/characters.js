@@ -17,6 +17,7 @@ class Characters extends React.Component {
 
   async componentDidMount() {
 
+    // pega a referencia guardado no localStorage
     let valor = localStorage.getItem('@starwars/0');
     const api = `https://swapi.dev/api/films/${valor}`;
 
@@ -26,17 +27,20 @@ class Characters extends React.Component {
 
     const person = response.data.characters;
 
+    // faz as requisiçao de uma array de links
+
     let char = person.map((c) => fetch(c).then(res => res.json()));
 
     Promise.all(char).then(res => { localStorage.setItem('chars', JSON.stringify(res)) })
 
     const pqp = [];
 
+    //guarda o retorno de cada link num array no localstorage
     const chars = JSON.parse(localStorage.getItem('chars'));
     chars.map(r => { pqp.push(r.name) });
 
 
-
+    // função pra pegar o id do filme no link dele
     const getIndex = person.map(l => (l.replace(/\D/g, '')))
 
     this.setState({ film: pqp, isLoading: false, getChar: getIndex });
@@ -44,11 +48,13 @@ class Characters extends React.Component {
   }
 
   render() {
-    const pqp = this.state.film;
+    const char = this.state.film;
     //const isLoading = this.state.isLoading;
+
+    // pega o id do filme e tranforma ele em numbers
     const getChar = this.state.getChar;
     const number = getChar.map(c => (Number(c)));
-    console.log(number);
+
 
 
     return (
@@ -59,7 +65,7 @@ class Characters extends React.Component {
             <div className="card3">
               <h1>CHARACTERS</h1>
               <div>
-                {pqp.map((r, id) => (
+                {char.map((r, id) => (
                   <a href={'/people'} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
                     <h2 key={r} >{r}</h2>
                   </a>
