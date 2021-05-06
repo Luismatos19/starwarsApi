@@ -9,7 +9,12 @@ function Film() {
   let valor = localStorage.getItem('@starwars/0');
   const api = `https://swapi.dev/api/films/${valor}`
 
+
+
+
   useEffect(() => {
+
+
     fetch(api)
       .then(res => res.json())
       .then((result) => { setFilms(result) })
@@ -46,17 +51,17 @@ function Film() {
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/ships">
               <h1>STARSHIPS</h1>
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/vehicles">
               <h1>VEHICLES</h1>
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/species">
               <h1>SPECIES</h1>
             </a>
           </div>
