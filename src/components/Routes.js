@@ -9,6 +9,8 @@ import Film from '../pages/Film';
 import People from '../components/People';
 import PlanetInfo from '../components/PlanetInfo';
 import ShipInfo from '../components/ShipInfo';
+import Vehicles from '../components/Vehicles';
+import VehiclesInfo from '../components/VehicleInfo';
 
 const Routes = () => (
   <BrowserRouter>
@@ -16,10 +18,12 @@ const Routes = () => (
     <Route exact path="/characters" component={Characters} />
     <Route exact path="/planets" component={Planets} />
     <Route exact path="/ships" component={Ships} />
+    <Route exact path="/Vehicles" component={Vehicles} />
     <Route exact path="/film" component={Film} />
     <Route exact path="/people" component={People} />
     <Route path="/planets/info" component={PlanetInfo} />
     <Route path="/ship/info" component={ShipInfo} />
+    <Route path="/vehicles/info" component={VehiclesInfo} />
   </BrowserRouter>
 );
 

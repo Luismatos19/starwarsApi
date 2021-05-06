@@ -29,12 +29,12 @@ class Ships extends React.Component {
 
     let links = await ship.map((c) => fetch(c).then(res => res.json()));
 
-    await Promise.all(links).then(res => { localStorage.setItem('chars', JSON.stringify(res)) })
+    await Promise.all(links).then(res => { localStorage.setItem('shipTemp', JSON.stringify(res)) })
 
     const data = [];
 
     //guarda o retorno de cada link num array no localstorage
-    const chars = JSON.parse(localStorage.getItem('chars'));
+    const chars = JSON.parse(localStorage.getItem('shipTemp'));
     chars.map(r => { data.push(r.name) });
 
     // função pra pegar o id da nave no link dele (função retorna apenas os numeros do link que é o id)
