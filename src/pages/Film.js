@@ -9,6 +9,9 @@ function Film() {
   let valor = localStorage.getItem('@starwars/0');
   const api = `https://swapi.dev/api/films/${valor}`
 
+
+
+
   useEffect(() => {
     fetch(api)
       .then(res => res.json())

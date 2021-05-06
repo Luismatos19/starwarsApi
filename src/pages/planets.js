@@ -69,19 +69,19 @@ class Planets extends React.Component {
           <div className="body">
             <div>
               <h1>PLANETS</h1>
-              <a href={`/planet/${1}`} >
+              <a href={'/planets/info'} onClick={() => { localStorage.setItem('planetId', '1') }}>
                 <h1>{plan[0]}</h1>
               </a>
-              <a href="/planet/info" onClick={() => { localStorage.setItem('´planetId', `${number[1]}`) }}>
+              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[1]}`) }}>
                 <h1>{plan[1]}</h1>
               </a>
-              <a href="/planet/info" onClick={() => { localStorage.setItem('´planetId', `${number[2]}`) }}>
+              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[2]}`) }}>
                 <h1>{plan[2]}</h1>
               </a>
-              <a href="//planet/info" onClick={() => { localStorage.setItem('´planetId', `${number[3]}`) }}>
+              <a href="//planets/info" onClick={() => { localStorage.setItem('planetId', `${number[3]}`) }}>
                 <h1>{plan[3]}</h1>
               </a>
-              <a href="//planet/info" onClick={() => { localStorage.setItem('´planetId', `${number[4]}`) }}>
+              <a href="//planets/info" onClick={() => { localStorage.setItem('planetId', `${number[4]}`) }}>
                 <h1>{plan[4]}</h1>
               </a>
 

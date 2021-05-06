@@ -17,7 +17,7 @@ const Routes = () => (
     <Route exact path="/ships" component={Ships} />
     <Route exact path="/film" component={Film} />
     <Route exact path="/people" component={People} />
-    <Route path="planets/:id" component={PlanetInfo} />
+    <Route path="/planets/info" component={PlanetInfo} />
   </BrowserRouter>
 );
 
