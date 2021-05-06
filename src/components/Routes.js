@@ -10,7 +10,9 @@ import People from '../components/People';
 import PlanetInfo from '../components/PlanetInfo';
 import ShipInfo from '../components/ShipInfo';
 import Vehicles from '../components/Vehicles';
-import VehiclesInfo from '../components/VehicleInfo';
+import VehicleInfo from '../components/VehicleInfo';
+import Species from '../components/Species';
+import SpecieInfo from '../components/SpecieInfo';
 
 const Routes = () => (
   <BrowserRouter>
@@ -19,11 +21,14 @@ const Routes = () => (
     <Route exact path="/planets" component={Planets} />
     <Route exact path="/ships" component={Ships} />
     <Route exact path="/Vehicles" component={Vehicles} />
+    <Route exact path="/species" component={Species} />
     <Route exact path="/film" component={Film} />
     <Route exact path="/people" component={People} />
     <Route path="/planets/info" component={PlanetInfo} />
     <Route path="/ship/info" component={ShipInfo} />
-    <Route path="/vehicles/info" component={VehiclesInfo} />
+    <Route path="/vehicles/info" component={VehicleInfo} />
+    <Route path="/specie/info" component={SpecieInfo} />
+
   </BrowserRouter>
 );
 

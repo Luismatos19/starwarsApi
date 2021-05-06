@@ -24,15 +24,15 @@ const VehicleInfo = () => {
   const description = {
     'Model:': `${vehicleInfo.model}`,
     'Manufacturer:': `${vehicleInfo.manufacturer}`,
-    'Cost in credits': `${vehicleInfo.cost_in_credits}`,
-    'Length': `${vehicleInfo.length}`,
-    'Max atmosphering speed': `${vehicleInfo.max_atmosphering_speed}`,
-    'Crew': `${vehicleInfo.crew}`,
-    'Passengers': `${vehicleInfo.passengers}`,
-    'Cargo capacity': `${vehicleInfo.cargo_capacity}`,
-    'Consumables': `${vehicleInfo.consumables}`,
-    'Hyperdrive rating': `${vehicleInfo.hyperdrive_rating}`,
-    'Vehicle class': `${vehicleInfo.vehicle_class}`,
+    'Cost in credits:': `${vehicleInfo.cost_in_credits}`,
+    'Length:': `${vehicleInfo.length}`,
+    'Max atmosphering speed:': `${vehicleInfo.max_atmosphering_speed}`,
+    'Crew:': `${vehicleInfo.crew}`,
+    'Passengers:': `${vehicleInfo.passengers}`,
+    'Cargo capacity:': `${vehicleInfo.cargo_capacity}`,
+    'Consumables:': `${vehicleInfo.consumables}`,
+    'Hyperdrive rating:': `${vehicleInfo.hyperdrive_rating}`,
+    'Vehicle class:': `${vehicleInfo.vehicle_class}`,
 
   }
 
