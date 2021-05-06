@@ -51,17 +51,17 @@ function Film() {
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/ships">
               <h1>STARSHIPS</h1>
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/vehicles">
               <h1>VEHICLES</h1>
             </a>
           </div>
           <div className="card2">
-            <a href="/characters">
+            <a href="/species">
               <h1>SPECIES</h1>
             </a>
           </div>
