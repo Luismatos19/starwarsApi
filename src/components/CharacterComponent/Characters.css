@@ -1,0 +1,11 @@
+.characters {
+  color: var(--yellow);
+}
+
+.list-char * {
+  color: var(--yellow);
+}
+
+.list-char a h2 {
+  padding-top: 10px;
+}

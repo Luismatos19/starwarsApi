@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Posters from './Posters';
+import Posters from '../PosterComponents/Posters';
 import './Home.css';
+import Footer from '../FooterComponent/Footer';
+
 
 function Home() {
 
@@ -68,7 +70,9 @@ function Home() {
             </h1>
           </div>
         </div>
+        <Footer />
       </div>
+
     </>
   );
 }

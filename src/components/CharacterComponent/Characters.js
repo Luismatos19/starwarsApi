@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
+import Header from '../HeaderComponent/Header';
+import Footer from '../FooterComponent/Footer';
+import './Characters.css'
 
 
 class Characters extends React.Component {
@@ -25,7 +27,7 @@ class Characters extends React.Component {
 
     console.log(response);
 
-    const person = response.data.characters;
+    const person = response.data.characters; //array com on llinks dos personagens
 
     // faz as requisiçao de uma array de links
 
@@ -33,17 +35,17 @@ class Characters extends React.Component {
 
     await Promise.all(char).then(res => { localStorage.setItem('chars', JSON.stringify(res)) })
 
-    const pqp = [];
+    const data = [];
 
     //guarda o retorno de cada link num array no localstorage
     const chars = JSON.parse(localStorage.getItem('chars'));
-    chars.map(r => { pqp.push(r.name) });
+    chars.map(r => { data.push(r.name) });
 
 
     // função pra pegar o id do filme no link dele
     const getIndex = person.map(l => (l.replace(/\D/g, '')))
 
-    this.setState({ film: pqp, isLoading: false, getChar: getIndex });
+    this.setState({ film: data, isLoading: false, getChar: getIndex });
 
   }
 
@@ -62,16 +64,19 @@ class Characters extends React.Component {
         <>
           <Header />
           <div className="body">
-            <div className="card3">
-              <h1>CHARACTERS</h1>
-              <div>
-                {char.map((r, id) => (
-                  <a href={'/people'} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
-                    <h2 key={r} >{r}</h2>
-                  </a>
-                ))}
+            <div className="content">
+              <div className="characters">
+                <h1>CHARACTERS</h1>
+                <div className="list-char">
+                  {char.map((r, id) => (
+                    <a href={`/people/${number[id]}`} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
+                      <h2 key={r} >{r}</h2>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
+            <Footer />
           </div>
         </>
     )

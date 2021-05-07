@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
+import Header from '../HeaderComponent/Header';
 
 
 class Ships extends React.Component {

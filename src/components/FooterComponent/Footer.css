@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
+
+.footer {
+  left: 0;
+  bottom: 10px;
+  width: 70%;
+  height: 30px;
+  display: flex;
+  background-color: var(--yellow);
+  color: var(--black);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 110px;
+}
+
+.linkdin,
+.git {
+  padding: 10px;
+}
+
+P {
+  font-family: "Poller One", cursive;
+}

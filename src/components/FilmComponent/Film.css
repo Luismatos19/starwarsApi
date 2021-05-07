@@ -1,12 +1,21 @@
-.body {
-  padding-top: 100px;
+.body_film {
   width: min(90vw, 1000px);
-  margin: auto;
+  width: 100%;
   text-align: center;
+
+  align-items: center;
+  justify-content: center;
+  background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
+}
+
+.content {
+  padding-top: 100px;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
 }
 
 .cards2 {
-  padding-top: 70px;
   margin: auto;
   border-radius: 0.5rem;
   justify-content: center;
@@ -16,7 +25,7 @@
 .card2 {
   display: flex;
   border-radius: 15px 15px 15px 15px;
-  background-color: #ffe81f;
+  background-color: var(--yellow);
   height: 10rem;
   align-items: center;
   justify-content: space-around;
@@ -32,14 +41,15 @@
   margin-top: 50px;
 }
 
-@media (min-width: 800px) {
-  html {
-    font-size: 87.5%;
-  }
+.text h1 {
+  color: var(--yellow);
+}
 
-  .cards2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-  }
+.opening p {
+  margin-top: 40px;
+  line-height: 3;
+  color: var(--yellow);
+}
+.text {
+  padding-top: 30px;
 }

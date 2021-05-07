@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
+import Header from '../HeaderComponent/Header';
 
 
 class Species extends React.Component {
@@ -58,7 +58,7 @@ class Species extends React.Component {
           <Header />
           <div className="body">
             <div className="card3">
-              <h1>STARspecies</h1>
+              <h1>SPECIES</h1>
               <div>
                 {species.map((r, id) => (
                   <a href={'/specie/info'} key={r} onClick={() => { localStorage.setItem('specieId', `${number[id]}`) }}>

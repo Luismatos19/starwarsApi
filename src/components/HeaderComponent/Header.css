@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  position: fixed;
+  background: var(--yellow);
+  height: 80px;
+  width: 100%;
+  margin: 0px;
+  padding-top: 0px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 15px 15px;
+  font-family: "Poller One", cursive;
+}
+
+.header:hover {
+  background-color: black;
+  color: var(--yellow);
+  transition: 0.5s;
+}
+
+.logo a:hover {
+  color: var(--yellow);
+}
+
+a {
+  color: black;
+}
+
+.button {
+  padding-left: 2px;
+  width: 65px;
+  height: 65px;
+}
+
+.title {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+
+  align-items: center;
+  justify-content: center;
+}
