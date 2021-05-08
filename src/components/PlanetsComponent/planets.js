@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Header from '../HeaderComponent/Header';
+import Footer from '../FooterComponent/Footer';
+import './Planets.css'
 
 class Planets extends React.Component {
   constructor(props) {
@@ -65,27 +67,29 @@ class Planets extends React.Component {
     return (
       this.state.isLoading ? <div>Loading</div> :
         <>
-          <Header />
-          <div className="body">
-            <div>
-              <h1>PLANETS</h1>
-              <a href={'/planets/info'} onClick={() => { localStorage.setItem('planetId', '1') }}>
-                <h1>{plan[0]}</h1>
+
+          <div className="body-planets">
+            <Header />
+            <div className="content-planets">
+              <h1 id="title-planets">PLANETS:</h1>
+              <a href={'/planetinfo'} onClick={() => { localStorage.setItem('planetId', `${number[0]}`) }}>
+                <h2>{plan[0]}</h2>
               </a>
-              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[1]}`) }}>
-                <h1>{plan[1]}</h1>
+              <a href="/planetinfo" onClick={() => { localStorage.setItem('planetId', `${number[1]}`) }}>
+                <h2>{plan[1]}</h2>
               </a>
-              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[2]}`) }}>
-                <h1>{plan[2]}</h1>
+              <a href="/planetinfo" onClick={() => { localStorage.setItem('planetId', `${number[2]}`) }}>
+                <h2>{plan[2]}</h2>
               </a>
-              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[3]}`) }}>
-                <h1>{plan[3]}</h1>
+              <a href="/planetinfo" onClick={() => { localStorage.setItem('planetId', `${number[3]}`) }}>
+                <h2>{plan[3]}</h2>
               </a>
-              <a href="/planets/info" onClick={() => { localStorage.setItem('planetId', `${number[4]}`) }}>
-                <h1>{plan[4]}</h1>
+              <a href="/planetinfo" onClick={() => { localStorage.setItem('planetId', `${number[4]}`) }}>
+                <h2>{plan[4]}</h2>
               </a>
 
             </div>
+            <Footer />
           </div>
         </>
     )

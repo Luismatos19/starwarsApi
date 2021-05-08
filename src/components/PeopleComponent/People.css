@@ -1,0 +1,12 @@
+.content-people,
+.description-people * {
+  color: var(--yellow);
+}
+
+.content-people {
+  margin-top: 120px;
+}
+
+.description-people {
+  margin-top: 60px;
+}

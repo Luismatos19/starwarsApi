@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  position: fixed;
+  position: absolute;
   background: var(--yellow);
   height: 80px;
   width: 100%;

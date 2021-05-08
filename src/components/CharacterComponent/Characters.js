@@ -65,11 +65,11 @@ class Characters extends React.Component {
           <Header />
           <div className="body">
             <div className="content">
-              <div className="characters">
+              <div className="list">
                 <h1>CHARACTERS</h1>
-                <div className="list-char">
+                <div className="itens">
                   {char.map((r, id) => (
-                    <a href={`/people/${number[id]}`} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
+                    <a href={'/peopleinfo'} key={r} onClick={() => { localStorage.setItem('charId', `${number[id]}`) }}>
                       <h2 key={r} >{r}</h2>
                     </a>
                   ))}

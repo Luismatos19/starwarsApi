@@ -36,13 +36,14 @@ function Film() {
               <p>
                 {films.opening_crawl}
               </p>
+
+              <h2> Director:</h2>
+              <p>{films.director}</p>
+              <h2> Producer:</h2>
+              <p>{films.producer}</p>
+              <h2> Release Date:</h2>
+              <p>{films.release_date}</p>
             </div>
-            <h2> Director:</h2>
-            <p>{films.director}</p>
-            <h2> Producer:</h2>
-            <p>{films.producer}</p>
-            <h2> Release Date:</h2>
-            <p>{films.release_date}</p>
           </div>
           <div className="cards2">
             <div className="card2">

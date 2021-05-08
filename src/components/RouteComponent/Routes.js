@@ -23,11 +23,11 @@ const Routes = () => (
     <Route exact path="/Vehicles" component={Vehicles} />
     <Route exact path="/species" component={Species} />
     <Route exact path="/film" component={Film} />
-    <Route exact path="/people/:id" component={People} />
-    <Route path="/planets/" component={PlanetInfo} />
-    <Route path="/ship/info" component={ShipInfo} />
-    <Route path="/vehicles/info" component={VehicleInfo} />
-    <Route path="/specie/info" component={SpecieInfo} />
+    <Route exact path="/peopleInfo" component={People} />
+    <Route exact path="/planetinfo" component={PlanetInfo} />
+    <Route path="/shipinfo" component={ShipInfo} />
+    <Route path="/vehiclesinfo" component={VehicleInfo} />
+    <Route path="/specieinfo" component={SpecieInfo} />
 
   </BrowserRouter>
 );

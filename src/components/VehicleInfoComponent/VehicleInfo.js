@@ -1,56 +1,75 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../HeaderComponent/Header';
+import Footer from '../FooterComponent/Footer';
 
 
 
-const VehicleInfo = () => {
+class VehicleInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      vehicleInfo: [],
+      isLoading: true,
 
-  const [vehicleInfo, setInfo] = useState([]);
+    };
+  }
 
-  let valor = localStorage.getItem('vehicleId');
-  const api = `https://swapi.dev/api/vehicles/${(valor)}`
+  async componentDidMount() {
+    let valor = localStorage.getItem('vehicleId');
+    const api = `https://swapi.dev/api/vehicles/${(valor)}`
 
 
-  useEffect(() => {
-    fetch(api)
+
+    await fetch(api)
       .then((res) => res.json())
-      .then((res) => { setInfo(res) })
-
-  }, [])
-
-  console.log(api)
-
-  //cria um objeto atribuindo valorres as descriçoes ( ja que o array que vem da api tem outros links)
-  const description = {
-    'Model:': `${vehicleInfo.model}`,
-    'Manufacturer:': `${vehicleInfo.manufacturer}`,
-    'Cost in credits:': `${vehicleInfo.cost_in_credits}`,
-    'Length:': `${vehicleInfo.length}`,
-    'Max atmosphering speed:': `${vehicleInfo.max_atmosphering_speed}`,
-    'Crew:': `${vehicleInfo.crew}`,
-    'Passengers:': `${vehicleInfo.passengers}`,
-    'Cargo capacity:': `${vehicleInfo.cargo_capacity}`,
-    'Consumables:': `${vehicleInfo.consumables}`,
-    'Hyperdrive rating:': `${vehicleInfo.hyperdrive_rating}`,
-    'Vehicle class:': `${vehicleInfo.vehicle_class}`,
+      .then((res) => {
+        this.setState({
+          vehicleInfo: res, isLoading: false
+        })
+      })
 
   }
 
 
-  return (
-    <>
-      <Header />
-      <div className="body">
-        <div>
-          <h1> {vehicleInfo.name} </h1>
-          {Object.keys(description).map((visit, index) => <h2 key={index}>{visit} : {description[visit]}</h2>)}
+  render() {
+
+    const vehicleInfo = this.state.vehicleInfo;
+
+    //cria um objeto atribuindo valorres as descriçoes ( ja que o array que vem da api tem outros links)
+    const description = {
+      'Model:': `${vehicleInfo.model}`,
+      'Manufacturer:': `${vehicleInfo.manufacturer}`,
+      'Cost in credits:': `${vehicleInfo.cost_in_credits}`,
+      'Length:': `${vehicleInfo.length}`,
+      'Max atmosphering speed:': `${vehicleInfo.max_atmosphering_speed}`,
+      'Crew:': `${vehicleInfo.crew}`,
+      'Passengers:': `${vehicleInfo.passengers}`,
+      'Cargo capacity:': `${vehicleInfo.cargo_capacity}`,
+      'Consumables:': `${vehicleInfo.consumables}`,
+      'Hyperdrive rating:': `${vehicleInfo.hyperdrive_rating}`,
+      'Vehicle class:': `${vehicleInfo.vehicle_class}`,
+
+    }
 
 
+    return (
+      <>
+        <Header />
+        <div className="body">
+          <div className="content">
+            <div className="list">
+              <h1> {vehicleInfo.name} </h1>
+            </div>
+            <div className="itens">
+              {Object.keys(description).map((visit, index) => <h2 key={index}>{visit} : {description[visit]}</h2>)}
+
+            </div>
+          </div>
         </div>
-      </div>
-    </>
-  )
-
+        <Footer />
+      </>
+    )
+  }
 }
 
 export default VehicleInfo;

@@ -1,78 +1,91 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../HeaderComponent/Header';
+import './People.css';
 
 
 
-const People = () => {
+class People extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      charInfo: [],
+      isLoading: true,
 
-  const [charInfo, setId] = useState([]);
+    };
+  }
 
-  let valor = localStorage.getItem('charId');
-  const api = `https://swapi.dev/api/people/${(valor)}`
+  async componentDidMount() {
 
-  console.log(api);
+    //pega o id do personagem e que esta guaraddo no local storage
+    let valor = localStorage.getItem('charId');
+    const api = `https://swapi.dev/api/people/${(valor)}`
 
-  useEffect(() => {
-    fetch(api)
+
+
+
+    await fetch(api)
       .then((res) => res.json())
-      .then((res) => { setId(res) })
+      .then((res) => {
 
-  }, [])
-
-
-  console.log(charInfo);
-
-  return (
-    <>
-      <Header />
-      <div className="body">
+        this.setState({
+          charInfo: res, isLoading: false
+        });
+      });
 
 
-        <div className="card_people">
-          <h1>
-            {charInfo.name}
-          </h1>
-        </div>
-        <div>
-          <h2>GENDER: {charInfo.gender}</h2>
-        </div>
-        <div>
-          <h2>MASS: {charInfo.mass}kg</h2>
-        </div>
-        <div>
-          <h2>HEIGHT: {charInfo.height} </h2>
-        </div>
-        <div>
-          <h2>HAIR COLOR: {charInfo.hair_color}</h2>
-        </div>
-        <div>
-          <h2>SKIN COLOR: {charInfo.skin_color}</h2>
-        </div>
-        <div>
-          <h2>EYE COLOR: {charInfo.eye_color}</h2>
-        </div>
-        <div>
-          <h2>BIRTH YEAR: {charInfo.birth_year}</h2>
-        </div>
-        <div>
-          <h2>HOME WORLD: {charInfo.homeworld}</h2>
-        </div>
-        <div>
-          <h2>FILMS: </h2>
-        </div>
-        <div>
-          <h2>STARSHIPS: </h2>
-        </div>
-        <div>
-          <h2>VEHICLES: </h2>
-        </div>
-      </div>
-    </>
+  }
+
+  render() {
+
+    const charInfo = this.state.charInfo;
+    //const isLoading = this.state.isLoading;
+
+    return (
+
+      this.state.isLoading ? <div>Loading</div> :
+        <>
+          <Header />
+          <div className="body">
 
 
-  )
+            <div className="content-people">
+              <h1>
+                {charInfo.name}
+              </h1>
+            </div>
+
+            <div className="description-people">
+              <h2>GENDER: {charInfo.gender}</h2>
 
 
+              <h2>MASS: {charInfo.mass}kg</h2>
+
+
+              <h2>HEIGHT: {charInfo.height} </h2>
+
+
+              <h2>HAIR COLOR: {charInfo.hair_color}</h2>
+
+
+              <h2>SKIN COLOR: {charInfo.skin_color}</h2>
+
+
+              <h2>EYE COLOR: {charInfo.eye_color}</h2>
+
+
+              <h2>BIRTH YEAR: {charInfo.birth_year}</h2>
+
+
+              <h2>HOME WORLD: {charInfo.homeworld}</h2>
+            </div>
+
+
+          </div>
+        </>
+
+
+    )
+  }
 }
 
 export default People;

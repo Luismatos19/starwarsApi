@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../HeaderComponent/Header';
+import Footer from '../FooterComponent/Footer';
 
 
 
@@ -38,13 +39,17 @@ const SpecieInfo = () => {
     <>
       <Header />
       <div className="body">
-        <div>
-          <h1> {specieInfo.name} </h1>
-          {Object.keys(description).map((visit, index) => <h2 key={index}>{visit} : {description[visit]}</h2>)}
+        <div className="content">
+          <div className="list">
+            <h1> {specieInfo.name} </h1>
+          </div>
+          <div className="itens">
+            {Object.keys(description).map((visit, index) => <h2 key={index}>{visit} : {description[visit]}</h2>)}
 
-
+          </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 

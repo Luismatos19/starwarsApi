@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Header from '../HeaderComponent/Header';
+import Footer from '../FooterComponent/Footer';
 
 
 class Species extends React.Component {
@@ -57,17 +58,20 @@ class Species extends React.Component {
         <>
           <Header />
           <div className="body">
-            <div className="card3">
-              <h1>SPECIES</h1>
-              <div>
+            <div className="content">
+              <div className="list">
+                <h1>SPECIES</h1>
+              </div>
+              <div className="itens">
                 {species.map((r, id) => (
-                  <a href={'/specie/info'} key={r} onClick={() => { localStorage.setItem('specieId', `${number[id]}`) }}>
+                  <a href={'/specieinfo'} key={r} onClick={() => { localStorage.setItem('specieId', `${number[id]}`) }}>
                     <h2 key={r} >{r}</h2>
                   </a>
                 ))}
               </div>
             </div>
           </div>
+          <Footer />
         </>
     )
   }

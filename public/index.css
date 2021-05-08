@@ -1,9 +1,55 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
+
+body {
+  background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
 #root {
-  background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
+  padding-top: 1px;
+}
+
+:root {
+  --yellow: #ffb914;
+  --black: black;
+  --white: white;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+  .title {
+    width: 100%;
+    font-size: 36px;
+  }
+
+  .opening h2 {
+    font-size: 35px;
+  }
+  .cards2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .opening p,
+  .description-people {
+    font-size: 20px;
+  }
+  .text,
+  .characters h1,
+  .content-people h1 {
+    font-size: 45px;
+  }
+  .characters h2 {
+    font-size: 30px;
+  }
 }
