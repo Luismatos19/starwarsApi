@@ -16,11 +16,11 @@
   margin-top: 90px;
 }
 
-.linkdin,
-.git {
-  padding: 10px;
+.git a {
+  padding-right: 10px;
 }
 
 P {
   font-family: "Poller One", cursive;
+  padding-right: 15px;
 }

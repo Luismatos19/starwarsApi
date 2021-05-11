@@ -1,41 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import './Film.css';
-import Header from '../HeaderComponent/Header';
-import Footer from '../FooterComponent/Footer';
-
-
+import React, { useEffect, useState } from "react";
+import "./Film.css";
+import Header from "../HeaderComponent/Header";
+import Footer from "../FooterComponent/Footer";
 
 function Film() {
   const [films, setFilms] = useState([]);
-  let valor = localStorage.getItem('@starwars/0');
-  const api = `https://swapi.dev/api/films/${valor}`
-
-
-
+  let valor = localStorage.getItem("@starwars/0");
+  const api = `https://swapi.dev/api/films/${valor}`;
 
   useEffect(() => {
-
-
     fetch(api)
-      .then(res => res.json())
-      .then((result) => { setFilms(result) })
-  }, [])
-
+      .then((res) => res.json())
+      .then((result) => {
+        setFilms(result);
+      });
+  }, []);
 
   return (
     <>
       <Header />
       <div className="body_film">
-
         <div className="content">
           <div className="text">
-            <h1>
-              {films.title}
-            </h1>
+            <h1>{films.title}</h1>
             <div className="opening">
-              <p>
-                {films.opening_crawl}
-              </p>
+              <p>{films.opening_crawl}</p>
 
               <h2> Director:</h2>
               <p>{films.director}</p>
